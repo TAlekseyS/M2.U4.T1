@@ -11,7 +11,7 @@ import static com.codeborne.selenide.Selenide.*;
 
 public class CardTests {
     @Test
-    void shouldTestCardDelivery() throws InterruptedException {
+    void shouldTestCardDelivery()  {
         open("http://localhost:9999");
        // $$(".form")
        // SelenideElement form = $("[action=/]");
@@ -31,7 +31,7 @@ public class CardTests {
 
 
 
-        Thread.sleep(10000);
+        //Thread.sleep(10000);
 
     }
 
