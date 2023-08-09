@@ -1,3 +1,4 @@
+import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.Keys;
@@ -25,6 +26,9 @@ public class CardTests {
         $("[class=checkbox__box]").click();
         $("[class=button__content]").click();
         $(withText("Успешно")).shouldBe(visible, Duration.ofSeconds(15));
+        $(".notification__content")
+                .shouldHave(Condition.text("Встреча успешно забронирована на " + "12.08.2023"), Duration.ofSeconds(15))
+                .shouldBe(Condition.visible);
 
 
 
