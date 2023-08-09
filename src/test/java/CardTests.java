@@ -1,5 +1,6 @@
 import com.codeborne.selenide.SelenideElement;
 import org.junit.jupiter.api.Test;
+import org.openqa.selenium.Keys;
 
 import java.time.Duration;
 
@@ -17,7 +18,8 @@ public class CardTests {
        // SelenideElement form = $("[action=/]");
        // form.$("[placeholder=Город] input").setValue("Казань");
         $("[placeholder=Город]").setValue("Казань");
-        //$("[placeholder=Дата встречи]").setValue("12.08.2023");
+        $("[data-test-id='date'] input").sendKeys(Keys.chord(Keys.SHIFT, Keys.HOME), Keys.BACK_SPACE);
+        $("[data-test-id='date'] input").setValue("12.08.2023");
         $("[name=name]").setValue("Кирилл Костиев");
         $("[name=phone]").setValue("+77987897897");
         $("[class=checkbox__box]").click();
